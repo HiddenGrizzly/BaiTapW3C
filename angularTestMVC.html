@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC and events</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js" integrity="sha512-fVCjT4t8Rpwq8H9CRtGl2KJGwJZXJJJ5vamhkpcT8UmW+Oe0ZNC2ACO8/virYei0FynS5nbliWfCPVV4NkBrJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <script src="angular2-module.js"></script>
+    <script src="angular2-controller.js"></script>
+    <!-- M:model, C:controller, V:view -->
+    <!-- Model: xử lý các nghiệp vụ(function)
+        Controller: Nhận và điều hướng các request tới modal và view
+        View: load(binding) dữ liệu từ model(giao tiếp giữa controller và view sử dụng $scope ) -->
+        <h2>MVC design patten demo</h2>
+        <!-- Khai báo Angularjs và controller-->
+        <div ng-app="myApp" ng-controller="myController">
+            Vowels:
+            <button ng-click="ch('A')">A</button>
+            <button ng-click="ch('E')">E</button>
+            <button ng-click="ch('I')">I</button>
+            <button ng-click="ch('O')">O</button>
+            <button ng-click="ch('U')">U</button>
+            <!-- Binding data step 4 -->
+            <p>{{ choice }}</p>
+            List:
+            <select ng-options="option for option in list" ng-model="myChoice" ng-change="c()"></select>
+            <p>{{ choice }}</p>
+        </div>
+</body>
+</html>
